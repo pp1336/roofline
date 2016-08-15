@@ -67,7 +67,6 @@ def read_csv(filepath):
         f.close()
         return result
 
-#print(read_csv('roofline.csv'))
 
 def get_bw_f(chipname):
     return bfd[chipname]
@@ -76,7 +75,6 @@ def get_oi(testname, time_order, space_order):
     (_, oi) = topsd[testname, time_order, space_order]
     return oi
 
-#print(get_oi('acoustic2d', 2, 2))
 
 def calc_flops(testname, space, time_step, time_order, space_order, time,
                padding, dimension):
@@ -84,4 +82,3 @@ def calc_flops(testname, space, time_step, time_order, space_order, time,
     return ((space + padding - space_order) ** dimension * time_step * ops)\
            / (time * glops_correction)
 
-#print(calc_flops('acoustic2d', 256, 361, 2, 6, 10.35, 80, 3))
